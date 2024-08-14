@@ -5,6 +5,7 @@ a = "test" # Redeclaring a variable with a different type.
 # Invalid variable names
 # $a = 33
 # 2a = 33
+# for = 33 # This is a keyword.
 print(a)
 
 HELLO_WORLD = "Hello World"
@@ -28,3 +29,19 @@ def print_name(some_dict):
     
 print_name(some_dict_1)
 print_name(some_dict_2)
+
+# Variable Types
+print("===== Variable Types =====")
+a_float = 33.0
+a_int = 100
+a_string = "Hello World"
+a_boolean = True
+a_list = [1, 2, 3]  
+a_dict = {"name": "hello"}
+
+print(f"Float: {type(a_float)}")
+print(f"Int: {type(a_int)}")
+print(f"String: {type(a_string)}")
+print(f"Boolean: {type(a_boolean)}")
+print(f"List: {type(a_list)}")
+print(f"Dict: {type(a_dict)}")
