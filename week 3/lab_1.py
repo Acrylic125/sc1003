@@ -20,21 +20,80 @@
 #  Input the coordinates to place the ship
 #  Initialize split_coordinates to coordinates.split() by ","
 #  If split_coordinates length is not 3 Then
+#   Print "Invalid coordinates, must be in the format (row [a-j], column [0-9], depth [0-1])"
 #   Continue
 #  EndIf
 #  Initialize row to split_coordinates[0]
 #  Initialize _column to split_coordinates[1]
 #  Initialize _depth to split_coordinates[2]
 #  If row is not [A...J] Then
+#   Print "Invalid row, must be in the format (row [a-j])"
 #   Continue
 #  EndIf
 #  If _column is not an integer Then
+#   Print "Invalid column and depth must be an integer"
 #   Continue
 #  EndIf
 #  If _depth is not an integer Then
+#   Print "Invalid column and depth must be an integer"
 #   Continue
 #  EndIf
 #  Initialize column, depth to int(_column), int(_depth)
+#  
+#  Input ship # Carrier, Submarine
+#  If ship is not (carrier or submarine) Then
+#   Print "Invalid ship type, must be in the format (C or S)"
+#   Continue
+#  EndIf
+#
+#  Initialize vert_space, horz_space to 0, 0
+#  If ship is carrier Then
+#   If orientation is v Then
+#    vert_space = 4
+#   Else
+#    horz_space = 4
+#   EndIf
+#  If ship is Submarine Then
+#   If orientation is v Then
+#    vert_space = 3
+#   Else
+#    horz_space = 3
+#   EndIf
+#  EndIf
+#  
+#  # Validate whether the ship can fit
+#  If row + vert_space > width Then
+#   print "Invalid placement, ship does not fit on board"
+#   continue
+#  EndIf
+#  If column + horz_space > height Then
+#   print "Invalid placement, ship does not fit on board"
+#   continue
+#  EndIf
+#  
+#  # Special case for the carrier where depth is not 1
+#  If ship is carrier And depth is not 1 Then
+#   print "Invalid depth for carrier, must be 1"
+#   continue
+#  EndIf
+#  
+#  For x from row to row + vert_space
+#   For y from column to column + horz_space
+#    board[depth][x][y] = ship
+#   EndFor
+#  EndFor
+#
+#  If ship is carrier Then
+#   For x from row to row + vert_space
+#    For y from column to column + horz_space
+#     If position at depth, x, y is not empty Then
+#       print "Invalid placement, ship does not fit on board"
+#       continue outter most loop
+#     EndIf
+#    EndFor
+#   EndFor
+#   Add ship to board
+#   break
 # EndWhile
 
 # Initialize the playe_1 name as string
