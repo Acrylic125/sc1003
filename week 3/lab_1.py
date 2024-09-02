@@ -120,76 +120,79 @@ layer = 2
 width = 10
 height = 10
 
-underwater_board = [[" " for _ in range(width)] for _ in range(height)]
-surface_board = [[" " for _ in range(width)] for _ in range(height)]
-board = [underwater_board, surface_board]
+# underwater_board = [[" " for _ in range(width)] for _ in range(height)]
+# surface_board = [[" " for _ in range(width)] for _ in range(height)]
+# board = [underwater_board, surface_board]
 
-def print_board(depth = 0):
-    print(f"---------- Layer {depth} ----------")
-    layer = ""
-    for row in range(height):
-        str_row = ""
-        for column in range(width):
-            str_row += board[depth][row][column]
-        layer += str_row + "\n"
-    print(layer)
+# def print_board(depth = 0):
+#     print(f"---------- Layer {depth} ----------")
+#     layer = ""
+#     for row in range(height):
+#         str_row = ""
+#         for column in range(width):
+#             str_row += board[depth][row][column]
+#         layer += str_row + "\n"
+#     print(layer)
 
-# board[0][3][4] = "X"
-# print_board()
+# # board[0][3][4] = "X"
+# # print_board()
 
-# TODO : 4. Initialize a boolean variable that will be used to indicate
-# whether user input is valid or not, two boolean variables hit and miss that indicate
-# whether the ship is hit or missed
-# Add you code of TODO 4 here
+# # TODO : 4. Initialize a boolean variable that will be used to indicate
+# # whether user input is valid or not, two boolean variables hit and miss that indicate
+# # whether the ship is hit or missed
+# # Add you code of TODO 4 here
 
-is_valid = False
+valid = False
 hit = False
 miss = False
 
-# Placement of ships
-ship_types = ["C", "S"]
-ships_left = ["C", "S"]
-while True:
-    # TODO : 5. The ships have only two orientation, either vertical or horizontal.
-    # Initialize a variable as ship orientation
-    # Add you code of TODO 5 here
-    
-    orientation = input("Enter orientation (h or v): ")
-    if orientation not in ["h", "v"]:
-        continue
+orientation = "h"
+coordinates = "A4,0,0"
 
-    # TODO : 6. The coordinates of where to put ship or where to hit on the board have a
-    # specific format. Create a string variable as coordinates
-    # Add you code of TODO 6 here
-    while True:
-        coords = input("Enter coordinates: ")
-        split_coords = coords.split(",")
-        if len(split_coords) != 3:
-            print("Invalid coordinates, must be in the format (row [a-j], column [0-9], depth [0-1])")
-            continue
-        row = split_coords[0].lower()
-        column = split_coords[1]
-        depth = split_coords[2]
-        if row not in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]:
-            print("Invalid row, must be in the format (row [a-j])")
-            continue
-        try:
-            column = int(column)
-            depth = int(depth)
-        except ValueError:
-            print("Invalid column and depth must be an integer")
-            continue
-        if column < 0 or column > 9 or depth < 0 or depth > 1:
-            print("Invalid column and depth must be in the range [0-9] and [0-1]")
-            continue
+# # Placement of ships
+# ship_types = ["C", "S"]
+# ships_left = ["C", "S"]
+# while True:
+#     # TODO : 5. The ships have only two orientation, either vertical or horizontal.
+#     # Initialize a variable as ship orientation
+#     # Add you code of TODO 5 here
+    
+#     orientation = input("Enter orientation (h or v): ")
+#     if orientation not in ["h", "v"]:
+#         continue
+
+#     # TODO : 6. The coordinates of where to put ship or where to hit on the board have a
+#     # specific format. Create a string variable as coordinates
+#     # Add you code of TODO 6 here
+#     while True:
+#         coords = input("Enter coordinates: ")
+#         split_coords = coords.split(",")
+#         if len(split_coords) != 3:
+#             print("Invalid coordinates, must be in the format (row [a-j], column [0-9], depth [0-1])")
+#             continue
+#         row = split_coords[0].lower()
+#         column = split_coords[1]
+#         depth = split_coords[2]
+#         if row not in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]:
+#             print("Invalid row, must be in the format (row [a-j])")
+#             continue
+#         try:
+#             column = int(column)
+#             depth = int(depth)
+#         except ValueError:
+#             print("Invalid column and depth must be an integer")
+#             continue
+#         if column < 0 or column > 9 or depth < 0 or depth > 1:
+#             print("Invalid column and depth must be in the range [0-9] and [0-1]")
+#             continue
         
-        ship = input("Enter ship type (C or S): ")
-        if ship not in ship_types:
-            print("Invalid ship type, must be in the format (C or S)")
-            continue
-        break   
+#         ship = input("Enter ship type (C or S): ")
+#         if ship not in ship_types:
+#             print("Invalid ship type, must be in the format (C or S)")
+#             continue
+#         break   
         
-    break
+#     break
 
 
 # TODO : 7. There are only two types of ships. Initialize two string variables as ship names
@@ -197,14 +200,16 @@ while True:
 # TODO : 8. Initialize a string variable holding a welcome message that can be displayed to user
 # Add you code of TODO 8 here
 
-# print(player1, player2)
-# print(layer)
-# print(width, height)
-# print(valid, hit, miss)
-# print(ori)
-# print(coor)
-# print(ship1, ship2)
-# print(welmes)
+print(player1, player2)
+print(layer)
+print(width, height)
+print(valid, hit, miss)
+print(orientation)
+print(coordinates)
+ship1 = "Carrier"
+ship2 = "Submarine"
+print(ship1, ship2)
+print(welmes)
 
 # TODO : 9. Take user input for attack coordinates and display the result.
 # Add you code of TODO 9 here
