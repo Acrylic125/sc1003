@@ -9,7 +9,7 @@ x_c, y_c = int(x_c), int(y_c)
 # Get the start position for the Submarine
 print("Please enter start_position of Submarine in the following format (row,col). E.g. 6,4")
 user_input_s = input("Enter coordinates: ")
-x_s, y_s = user_input_c.split(",")
+x_s, y_s = user_input_s.split(",")
 x_s, y_s = int(x_s), int(y_s)
 
 # TODO : 2. Split the string at the comma and convert to a tuple of integers
@@ -19,13 +19,13 @@ x_s, y_s = int(x_s), int(y_s)
 # Add you code of TODO 3 here
 ships = {
     "Carrier": {
-        "id": "C",
-        "length": 3,
+        "id": "S",
+        "length": 5,
         "start_pos": (x_c, y_c)
     },
     "Submarine": {
         "id": "S",
-        "length": 4,
+        "length": 3,
         "start_pos": (x_s, y_s)
     }
 }
@@ -44,7 +44,7 @@ def place_ship(ship_name):
     ship = ships.get(ship_name)
     if ship is None:
         raise Exception(f"{ship_name} does not exist.")
-    id = ship["id"]    
+    id = ship["id"]
     length = ship["length"]    
     x, y = ship["start_pos"]    
     for i in range(0, length):
